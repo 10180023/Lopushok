@@ -13,7 +13,7 @@
             <RowDefinition/>
             <RowDefinition Height="1.2*"/>
             <RowDefinition Height="6*"/>
-            <RowDefinition/>
+            <RowDefinition Height="1.2*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -32,18 +32,18 @@
             <RadioButton Name="rbDesc" Content="По убыванию" Click="rbAsc_Click"/>
         </StackPanel>
 
-        <ListView Name="lvProducts" Grid.Row="2" Grid.ColumnSpan="4">
+        <ListView Name="lvProducts" Grid.Row="2" Grid.ColumnSpan="4" IsVisibleChanged="lvProducts_IsVisibleChanged" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="120"/>
+                            <ColumnDefinition/>
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
 
-                        <Image Source="{Binding LogoProd}" Grid.Column="0"/>
+                        <Image Source="{Binding LogoProd}" Grid.Column="0" Width="200" Height="120"/>
                         <StackPanel Grid.Column="1" HorizontalAlignment="Center">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock Text="{Binding ProductType.Title}"/>
@@ -68,7 +68,7 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <Button Name="btnAdd" Content="Добавить продукт" Click="btnAdd_Click" Grid.Row="3" Grid.ColumnSpan="4" HorizontalAlignment="Center"/>
+        <Button Name="btnAdd" Content="Добавить продукт" Click="btnAdd_Click" Grid.Row="3" Grid.ColumnSpan="4" HorizontalAlignment="Center" Width="200"/>
 
     </Grid>
 </Page>

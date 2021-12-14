@@ -35,23 +35,23 @@
         <TextBox Name="tbDesc" Text="{Binding Description}" Grid.Row="3" Grid.Column="3"/>
         <Grid Grid.Row="4" Grid.Column="3">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition />
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <TextBox Name="tbImage" Grid.Column="0"/>
-            <Button Name="btnImage" Content="Изменить" Grid.Column="1" Width="auto"/>
-            <Image Name="imgLogo" Source="{Binding LogoProd}"/>
+            <TextBox Name="tbImage" Text="{Binding Image}" Grid.Column="0"/>
+            <Button Name="btnImage" Content="Выбрать" Grid.Column="1" Width="auto" FontSize="10"/>
+            <Image Name="imgLogo" Source="{Binding LogoProd}" Grid.Column="2"/>
         </Grid>
 
-        <TextBlock Text="Артикул" Grid.Row="1" Grid.Column="0"/>
-        <TextBlock Text="Наименование" Grid.Row="2" Grid.Column="0"/>
-        <TextBlock Text="Тип продукта" Grid.Row="3" Grid.Column="0"/>
-        <TextBlock Text="Кол-во человек для производства" TextWrapping="Wrap" Grid.Row="4" Grid.Column="0"/>
-        <TextBlock Text="Номер цеха" Grid.Row="1" Grid.Column="2"/>
-        <TextBlock Text="Мин. стоимость" Grid.Row="2" Grid.Column="2"/>
-        <TextBlock Text="Описание" Grid.Row="3" Grid.Column="2"/>
-        <TextBlock Text="Изображение" Grid.Row="4" Grid.Column="2"/>
+        <TextBlock Text="Артикул" Grid.Row="1" Grid.Column="0" Style="{DynamicResource tbEdit}"/>
+        <TextBlock Text="Наименование" Grid.Row="2" Grid.Column="0" Style="{DynamicResource tbEdit}"/>
+        <TextBlock Text="Тип продукта" Grid.Row="3" Grid.Column="0" Style="{DynamicResource tbEdit}"/>
+        <TextBlock Text="Кол-во человек для производства" TextWrapping="Wrap" Grid.Row="4" Grid.Column="0" Style="{DynamicResource tbEdit}"/>
+        <TextBlock Text="Номер цеха" Grid.Row="1" Grid.Column="2" Style="{DynamicResource tbEdit}"/>
+        <TextBlock Text="Мин. стоимость" Grid.Row="2" Grid.Column="2" Style="{DynamicResource tbEdit}"/>
+        <TextBlock Text="Описание" Grid.Row="3" Grid.Column="2" Style="{DynamicResource tbEdit}"/>
+        <TextBlock Text="Изображение" Grid.Row="4" Grid.Column="2" Style="{DynamicResource tbEdit}"/>
 
         <StackPanel Grid.Row="5" Grid.ColumnSpan="4" Orientation="Horizontal" HorizontalAlignment="Center">
             <Button Name="btnSave" Content="Сохранить" Click="btnSave_Click"/>

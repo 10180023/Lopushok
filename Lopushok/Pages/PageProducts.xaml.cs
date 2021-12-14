@@ -22,8 +22,6 @@ namespace Lopushok.Pages
     /// </summary>
     public partial class PageProducts : Page
     {
-        
-
         public PageProducts()
         {
             InitializeComponent();
@@ -65,26 +63,26 @@ namespace Lopushok.Pages
                     case 1:
                         if (rbAsc.IsChecked == true)
                         {
-                            currentProducts.OrderBy(p => p.Title).ToList();
+                            currentProducts = currentProducts.OrderBy(p => p.Title).ToList();
                         }
                         else
-                            currentProducts.OrderByDescending(p => p.Title).ToList();
+                            currentProducts = currentProducts.OrderByDescending(p => p.Title).ToList();
                         break;
                     case 2:
                         if (rbAsc.IsChecked == true)
                         {
-                            currentProducts.OrderBy(p => p.ProductionWorkshopNumber).ToList();
+                            currentProducts = currentProducts.OrderBy(p => p.ProductionWorkshopNumber).ToList();
                         }
                         else
-                            currentProducts.OrderByDescending(p => p.ProductionWorkshopNumber).ToList();
+                            currentProducts = currentProducts.OrderByDescending(p => p.ProductionWorkshopNumber).ToList();
                         break;
                     case 3:
                         if (rbAsc.IsChecked == true)
                         {
-                            currentProducts.OrderBy(p => p.MinCostForAgent).ToList();
+                            currentProducts = currentProducts.OrderBy(p => p.MinCostForAgent).ToList();
                         }
                         else
-                            currentProducts.OrderByDescending(p => p.MinCostForAgent).ToList();
+                            currentProducts = currentProducts.OrderByDescending(p => p.MinCostForAgent).ToList();
                         break;
                 }
             }
@@ -131,6 +129,12 @@ namespace Lopushok.Pages
         private void tbFinder_TextChanged(object sender, TextChangedEventArgs e)
         {
             UpdateProducts();
+        }
+
+        private void lvProducts_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            DB.db.ChangeTracker.Entries().ToList().ForEach(a => a.Reload());
+            lvProducts.ItemsSource = DB.db.Product.ToList();
         }
     }
 }

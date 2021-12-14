@@ -27,6 +27,11 @@ namespace Lopushok.Pages
         {
             InitializeComponent();
 
+            if (product.ID == 0)
+            {
+                btnDelete.Visibility = Visibility.Hidden;
+            }
+
             if (currentProd != null)
             {
                 product = currentProd;
@@ -41,7 +46,15 @@ namespace Lopushok.Pages
         {
             StringBuilder errors = new StringBuilder();
             if (string.IsNullOrWhiteSpace(product.Title))
-                errors.AppendLine("Укажите название агента");
+                errors.AppendLine("Укажите название продукта");
+            if (string.IsNullOrWhiteSpace(product.ArticleNumber))
+                errors.AppendLine("Укажите артикул продукта");
+            if (string.IsNullOrWhiteSpace(product.MinCostForAgent.ToString()))
+                errors.AppendLine("Укажите минимальную стоимость");
+            if (string.IsNullOrWhiteSpace(product.ProductionWorkshopNumber.ToString()))
+                errors.AppendLine("Укажите номер цеха производства");
+            if (string.IsNullOrWhiteSpace(product.ProductionPersonCount.ToString()))
+                errors.AppendLine("Укажите кол-во человек для производства");
             if (product.ProductType == null)
                 errors.AppendLine(cbTypes.Text.ToString());
 
@@ -60,6 +73,7 @@ namespace Lopushok.Pages
             {
                 DB.db.SaveChanges();
                 MessageBox.Show("Данные добавлены", "Уведомление");
+                Manager.mainFrame.GoBack();
             }
             catch (Exception ex)
             {
@@ -69,13 +83,15 @@ namespace Lopushok.Pages
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("Вы действительно хотите удалить запись?", "Внимание", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            if (MessageBox.Show("Вы действительно хотите удалить запись?", "Внимание", 
+                MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 try
                 {
                     DB.db.Product.Remove(product);
                     DB.db.SaveChanges();
                     MessageBox.Show("Запись удалена", "Уведомление");
+                    Manager.mainFrame.GoBack();
                 }
                 catch (Exception ex)
                 {
