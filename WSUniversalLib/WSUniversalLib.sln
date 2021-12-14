@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSUniversalLib", "WSUniversalLib\WSUniversalLib.csproj", "{F819C0D7-B410-46B8-9F9B-D4FECCF4F433}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculation.Tests", "Lopushok.Tests\Calculation.Tests.csproj", "{73F19C90-1AB1-46D2-81A6-134C4297C65B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F819C0D7-B410-46B8-9F9B-D4FECCF4F433}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F819C0D7-B410-46B8-9F9B-D4FECCF4F433}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F819C0D7-B410-46B8-9F9B-D4FECCF4F433}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F819C0D7-B410-46B8-9F9B-D4FECCF4F433}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73F19C90-1AB1-46D2-81A6-134C4297C65B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73F19C90-1AB1-46D2-81A6-134C4297C65B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73F19C90-1AB1-46D2-81A6-134C4297C65B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73F19C90-1AB1-46D2-81A6-134C4297C65B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FFF822B6-967B-405A-BDBC-15AC2A35C32F}
+	EndGlobalSection
+EndGlobal
